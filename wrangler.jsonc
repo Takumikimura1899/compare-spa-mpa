@@ -1,5 +1,5 @@
 {
   "name": "compare-spa-mpa",
-  "main": "dist/index.html",
+  "main": "src/pages/index.astro",
   "compatibility_date": "2025-09-14"
 }
