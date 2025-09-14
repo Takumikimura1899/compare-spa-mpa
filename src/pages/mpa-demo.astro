@@ -1,0 +1,24 @@
+---
+export const prerender = false;
+import Layout from '../layouts/Layout.astro';
+import { allProducts } from '../common/constant/products';
+import { Card } from '../components/Card';
+
+const category = Astro.url.searchParams.get('category');
+
+const filteredProducts = category ? allProducts.filter(p => p.category === category) : allProducts;
+---
+<Layout>
+    <h1>MPAデモ</h1>
+    <nav>
+        <a class="button" href="/mpa-demo">すべて</a>
+        <a class="button" href="/mpa-demo?category=家電">家電</a>
+        <a class="button" href="/mpa-demo?category=家具">家具</a>
+        <a class="button" href="/mpa-demo?category=本">本</a>
+    </nav>
+    <ul>
+        {filteredProducts.map(product => (
+            <li><Card title={product.name} category={product.category} detail={product.detail} /></li>
+        ))}
+    </ul>
+</Layout>
