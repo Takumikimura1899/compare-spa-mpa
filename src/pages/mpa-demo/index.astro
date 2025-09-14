@@ -1,8 +1,8 @@
 ---
 export const prerender = false;
-import Layout from '../layouts/Layout.astro';
-import { allProducts } from '../common/constant/products';
-import { Card } from '../components/Card';
+import Layout from '../../layouts/Layout.astro';
+import { allProducts } from '../../common/constant/products';
+import { Card } from '../../components/Card';
 
 const category = Astro.url.searchParams.get('category');
 
